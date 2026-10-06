@@ -1,6 +1,6 @@
 \# Pipelined Tensor Processing Slice \& Verification Suite
 
-
+Personal project exploring domain-specific microarchitecture for AI acceleration, following and inspired by pipelined CPU design in ECE 3058.
 
 A 3-stage pipelined 4-lane vector dot-product engine implemented in SystemVerilog, modeling GPU Tensor Core microarchitectures for INT8 matrix multiplication workloads.
 
