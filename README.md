@@ -8,13 +8,13 @@ A 3-stage pipelined 4-lane vector dot-product engine implemented in SystemVerilo
 
 \## Microarchitecture
 
-\- \*\*Stage 1 (Multiply)\*\*: 4 parallel signed INT8 multipliers ($A\_i \\times B\_i$) producing 16-bit intermediate products with input pipeline registers.
+\- Stage 1 (Multiply): 4 parallel signed INT8 multipliers ($A\_i \\times B\_i$) producing 16-bit intermediate products with input pipeline registers.
 
-\- \*\*Stage 2 (Adder Tree)\*\*: 18-bit balanced adder tree summing the 4 products without bit truncation.
+\- Stage 2 (Adder Tree): 18-bit balanced adder tree summing the 4 products without bit truncation.
 
-\- \*\*Stage 3 (Accumulate \& Saturate)\*\*: 19-bit accumulator adding staged 16-bit bias $C$, followed by two's complement saturation logic clamped to `\[-32768, 32767]` (`0x7FFF` / `0x8000`), driving `overflow` and `valid\_out`.
+\- Stage 3 (Accumulate \& Saturate): 19-bit accumulator adding staged 16-bit bias $C$, followed by two's complement saturation logic clamped to `\[-32768, 32767]` (`0x7FFF` / `0x8000`), driving `overflow` and `valid\_out`.
 
-\- \*\*Throughput\*\*: 3-cycle latency with continuous 1-result-per-cycle streaming throughput.
+\- Throughput: 3-cycle latency with continuous 1-result-per-cycle streaming throughput.
 
 
 
@@ -26,13 +26,13 @@ A 3-stage pipelined 4-lane vector dot-product engine implemented in SystemVerilo
 
 \- Stimulus driven on `negedge clk` to guarantee stable setup-time margins for the DUT sampling on `posedge clk`.
 
-\- \*\*Result\*\*: 1,008 / 1,008 tests passed with 0 mismatches.
+\- Result: 1,008 / 1,008 tests passed with 0 mismatches.
 
 
 
 \## Waveform
 
-!\[Simulation Waveform](waveform.png)
+See waveform.png
 
 
 
